@@ -8,5 +8,5 @@ on:
 
 jobs:
   ci-fast:
-    # Reemplazar MarbiFox por tu usuario/organización real de GitHub.
-    uses: MarbiFox/.github/.github/workflows/ci-fast.yml@main
+    # Reemplazar TU-USUARIO por tu usuario/organización real de GitHub.
+    uses: TU-USUARIO/.github/.github/workflows/ci-fast.yml@main

@@ -27,8 +27,8 @@ Ir marcando a medida que se completa el setup.
 - [ ] Si es monorepo: estructura `apps/` + `packages/` creada
 
 ## CI
-- [ ] `.github/workflows/ci.yml` -- reemplazar `MarbiFox` por el usuario/org real
-- [ ] `.github/workflows/ci-full.yml` -- reemplazar `MarbiFox` por el usuario/org real
+- [ ] `.github/workflows/ci.yml` -- reemplazar `TU-USUARIO` por el usuario/org real
+- [ ] `.github/workflows/ci-full.yml` -- reemplazar `TU-USUARIO` por el usuario/org real
 - [ ] Scripts estandarizados agregados a `package.json`: `lint`, `build`, `test:unit`, `test:integration`, `test:e2e`, `test:coverage` (los que apliquen a esta etapa del proyecto)
 - [ ] `vitest.config.ts` creado a partir de `vitest.config.ts.example`, con threshold de cobertura ajustado (ver Regla #5)
 - [ ] `playwright.config.ts` creado a partir de `playwright.config.ts.example` si el proyecto tendrá E2E
@@ -58,12 +58,12 @@ Ir marcando a medida que se completa el setup.
 - [ ] `tsconfig.json` con `strict: true` si es proyecto grande (relajable si es `exp-`/chico, ver Regla #11)
 
 ## Release y versionado
-- [ ] `.github/workflows/release.yml` -- reemplazar `MarbiFox` por el usuario/org real
+- [ ] `.github/workflows/release.yml` -- reemplazar `TU-USUARIO` por el usuario/org real
 - [ ] `release.config.js` creado a partir de `release.config.js.example`
 - [ ] Dependencias instaladas: `npm i -D semantic-release @semantic-release/changelog @semantic-release/git`
 - [ ] Si el repo publica a npm (`lib-*`): `publish-npm: true` en `release.yml` + secret `NPM_TOKEN` configurado + plugin `@semantic-release/npm` descomentado en `release.config.js`
-- [ ] En Settings → Branches: GitHub Actions exceptuado de la protección de `main` para permitir el commit de vuelta de `CHANGELOG.md`
-- [ ] `.github/workflows/release-gate.yml` -- reemplazar `MarbiFox` por el usuario/org real
+- [ ] Personal Access Token fine-grained creado (Contents: Read/Write, guardado en Bitwarden) y agregado como secret `RELEASE_TOKEN` del repo -- ver Regla #6
+- [ ] `.github/workflows/release-gate.yml` -- reemplazar `TU-USUARIO` por el usuario/org real
 - [ ] Check "Release gate" marcado como required status check en la protección de `main`
 
 ---

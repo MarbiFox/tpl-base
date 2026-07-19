@@ -11,8 +11,8 @@ on:
 jobs:
   ci-full:
     if: github.event.deployment_status.state == 'success'
-    # Reemplazar MarbiFox por tu usuario/organización real de GitHub.
-    uses: MarbiFox/.github/.github/workflows/ci-full.yml@main
+    # Reemplazar TU-USUARIO por tu usuario/organización real de GitHub.
+    uses: TU-USUARIO/.github/.github/workflows/ci-full.yml@main
     with:
       preview-url: ${{ github.event.deployment_status.environment_url }}
       # E2E completo solo tiene sentido en el Release PR (develop -> main).
