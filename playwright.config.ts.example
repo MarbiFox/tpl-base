@@ -1,0 +1,15 @@
+// Renombrar a playwright.config.ts al adoptar Playwright en el proyecto.
+// La URL base viene del preview real (Regla #5: nunca contra localhost/mocks
+// en integración/E2E) -- se inyecta vía variable de entorno PREVIEW_URL
+// desde el workflow ci-full.yml.
+
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests/e2e',
+  use: {
+    baseURL: process.env.PREVIEW_URL || 'http://localhost:3000',
+  },
+  // Cubrir solo flujos críticos (login, acción principal, checkout si
+  // aplica) -- no cada pantalla. Ver pirámide de testing en la Regla #5.
+});

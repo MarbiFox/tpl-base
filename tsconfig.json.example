@@ -1,0 +1,15 @@
+// Renombrar a tsconfig.json (o mergear con el que genere el CLI del
+// framework elegido) al adoptar TypeScript.
+//
+// "strict" queda en true por defecto -- ver Regla #11 para el criterio
+// de cuándo relajarlo en proyectos chicos/experimentales.
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  }
+}

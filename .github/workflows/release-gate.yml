@@ -1,0 +1,10 @@
+name: Release gate
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  release-gate:
+    # Reemplazar MarbiFox por tu usuario/organización real de GitHub.
+    uses: MarbiFox/.github/.github/workflows/release-gate.yml@main

@@ -1,0 +1,8 @@
+// Renombrar a .lintstagedrc.js al adoptar el pre-commit hook.
+// Instalar: npm i -D husky lint-staged
+// Luego: npx husky init && echo "npx lint-staged" > .husky/pre-commit
+
+module.exports = {
+  '*.{ts,tsx,js,jsx}': ['eslint --fix', 'prettier --write'],
+  '*.{json,md,yml,yaml}': ['prettier --write'],
+};

@@ -1,0 +1,23 @@
+// Renombrar a vitest.config.ts al adoptar Vitest en el proyecto.
+// Ajustar el threshold según la tabla de la Regla #5:
+//   - Proyecto chico/nuevo: 60% líneas
+//   - Proyecto grande/escalable: 75-80% en patch coverage (requiere plugin
+//     adicional tipo vitest-coverage-report-action para medir solo el diff;
+//     este archivo cubre el caso simple de cobertura total)
+
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      thresholds: {
+        lines: 60,
+        functions: 60,
+        branches: 60,
+        statements: 60,
+      },
+    },
+  },
+});

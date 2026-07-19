@@ -1,0 +1,21 @@
+name: CI completo (integración + E2E)
+
+# Se dispara automáticamente cuando Vercel/Railway/Netlify reportan que el
+# preview deployment de este PR ya está arriba (evento deployment_status).
+# No corre en cada push -- correr integración/E2E contra localhost no tiene
+# sentido en este modelo (Regla #5: siempre contra un entorno real).
+
+on:
+  deployment_status:
+
+jobs:
+  ci-full:
+    if: github.event.deployment_status.state == 'success'
+    # Reemplazar MarbiFox por tu usuario/organización real de GitHub.
+    uses: MarbiFox/.github/.github/workflows/ci-full.yml@main
+    with:
+      preview-url: ${{ github.event.deployment_status.environment_url }}
+      # E2E completo solo tiene sentido en el Release PR (develop -> main).
+      # Ajustar esta condición por proyecto si se quiere correr E2E también
+      # en PRs de feature puntuales (ver Regla #5, criterio discrecional).
+      run-e2e: ${{ github.event.deployment_status.environment == 'production' || github.ref == 'refs/heads/develop' }}

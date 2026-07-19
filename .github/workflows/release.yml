@@ -1,0 +1,14 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    # Reemplazar MarbiFox por tu usuario/organización real de GitHub.
+    uses: MarbiFox/.github/.github/workflows/release.yml@main
+    with:
+      publish-npm: false  # cambiar a true solo en repos tipo lib-* que se publican a npm
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # solo se usa si publish-npm es true

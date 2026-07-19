@@ -1,0 +1,21 @@
+// Renombrar a release.config.js al adoptar semantic-release en el proyecto.
+// Instalar como devDependencies:
+//   npm i -D semantic-release @semantic-release/changelog @semantic-release/git
+
+module.exports = {
+  branches: ['main'],
+  plugins: [
+    '@semantic-release/commit-analyzer',     // decide el bump según el tipo de commit (Regla #3)
+    '@semantic-release/release-notes-generator', // genera las notas de la GitHub Release
+    '@semantic-release/changelog',           // actualiza CHANGELOG.md
+    // '@semantic-release/npm',              // descomentar solo en repos lib-* que publican a npm
+    [
+      '@semantic-release/git',
+      {
+        assets: ['CHANGELOG.md', 'package.json'],
+        message: 'chore(release): ${nextRelease.version}\n\n${nextRelease.notes}',
+      },
+    ],
+    '@semantic-release/github',              // crea el tag + GitHub Release
+  ],
+};

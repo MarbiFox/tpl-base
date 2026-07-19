@@ -1,0 +1,24 @@
+// Fragmento a integrar en la config de ESLint del proyecto.
+// Instalar: npm i -D eslint-plugin-jsdoc
+
+module.exports = {
+  plugins: ['jsdoc'],
+  rules: {
+    // Exige JSDoc solo en funciones/clases EXPORTADAS (públicas).
+    // Las internas quedan libres -- no se satura el código con
+    // documentación de cosas que nadie más consume.
+    'jsdoc/require-jsdoc': [
+      'error',
+      {
+        publicOnly: true,
+        require: {
+          FunctionDeclaration: true,
+          MethodDefinition: true,
+          ClassDeclaration: true,
+        },
+      },
+    ],
+    'jsdoc/require-param': 'error',
+    'jsdoc/require-returns': 'error',
+  },
+};

@@ -1,0 +1,22 @@
+# Entornos
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+build/
+.next/
+out/
+
+# Editores/SO
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+*.log
+
+# El CLI del framework probablemente agregue sus propias reglas aqui debajo.
+# Combinar, no reemplazar este bloque inicial.

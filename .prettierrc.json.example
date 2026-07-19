@@ -1,0 +1,8 @@
+// Renombrar a .prettierrc.json al adoptar Prettier.
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2
+}
